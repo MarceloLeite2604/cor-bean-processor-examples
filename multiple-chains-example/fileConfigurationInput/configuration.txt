@@ -1,0 +1,3 @@
+fileConfigurationProperty1=fileConfigurationValue1
+fileConfigurationProperty2=fileConfigurationValue2
+fileConfigurationProperty3=fileConfigurationValue3

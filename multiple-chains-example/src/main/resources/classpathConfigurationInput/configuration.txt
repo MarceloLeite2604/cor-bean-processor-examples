@@ -1,0 +1,3 @@
+classpathConfigurationProperty1=classpathConfigurationValue1
+classpathConfigurationProperty2=classpathConfigurationValue2
+classpathConfigurationProperty3=classpathConfigurationValue3

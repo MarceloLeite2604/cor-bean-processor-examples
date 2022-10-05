@@ -24,5 +24,6 @@
 
   <modules>
     <module>single-chain-example</module>
+    <module>multiple-chains-example</module>
   </modules>
 </project>
