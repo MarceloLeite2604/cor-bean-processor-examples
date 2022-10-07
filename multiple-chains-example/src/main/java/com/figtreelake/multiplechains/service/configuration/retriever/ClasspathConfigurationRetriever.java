@@ -37,6 +37,4 @@ public class ClasspathConfigurationRetriever extends AbstractConfigurationRetrie
       throw new IllegalStateException(message, ioException);
     }
   }
-
-
 }

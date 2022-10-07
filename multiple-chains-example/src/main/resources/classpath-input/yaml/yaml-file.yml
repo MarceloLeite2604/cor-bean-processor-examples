@@ -1,0 +1,15 @@
+fruits:
+  - banana
+  - apple
+  - orange
+bread.quantity: 7
+liquids:
+  water:
+    bottles: 2
+    volume-liters: 0.84
+  juice:
+    bottles: 1
+    volume-liters: 1
+  wine:
+    bottles: 3
+    volume-liters: 2.25

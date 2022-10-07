@@ -26,7 +26,7 @@ class FileConfigurationRetrieverTest {
 
     final var uri = Paths.get(Strings.EMPTY)
         .toAbsolutePath()
-        .resolve("fileConfigurationInput/configuration.txt")
+        .resolve("file-input/configuration.txt")
         .toUri();
 
     final var properties = fileConfigurationRetriever.retrieve(uri);

@@ -1,0 +1,22 @@
+<inventory>
+  <fruits>
+    <banana />
+    <apple />
+    <orange />
+  </fruits>
+  <bread quantity="7" />
+  <liquids>
+    <water>
+      <bottles>2</bottles>
+      <volume-liters>0.84</volume-liters>
+    </water>
+    <juice>
+      <bottles>1</bottles>
+      <volume-liters>1</volume-liters>
+    </juice>
+    <wine>
+      <bottles>3</bottles>
+      <volume-liters>2.25</volume-liters>
+    </wine>
+  </liquids>
+</inventory>

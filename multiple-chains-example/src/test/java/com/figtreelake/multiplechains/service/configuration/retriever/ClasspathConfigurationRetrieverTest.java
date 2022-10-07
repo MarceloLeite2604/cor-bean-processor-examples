@@ -23,7 +23,7 @@ class ClasspathConfigurationRetrieverTest {
     final var expectedProperties = PropertiesFixture.createClasspathProperties();
 
     final var uri = new URIBuilder().setScheme("classpath")
-        .setPath("/classpathConfigurationInput/configuration.txt")
+        .setPath("/classpath-input/configuration.txt")
         .build();
 
     final var properties = classpathConfigurationRetriever.retrieve(uri);
