@@ -1,6 +1,6 @@
 package com.figtreelake.multiplechains.service.configuration.retriever;
 
-import com.figtreelake.multiplechains.test.implementation.ConfigurationRetrieverForTests;
+import com.figtreelake.multiplechains.test.implementation.ConfigurationRetrieverTestImplementation;
 import org.apache.hc.core5.net.URIBuilder;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -19,7 +19,7 @@ class AbstractConfigurationRetrieverTest {
 
   @BeforeEach
   void setUp() {
-    abstractConfigurationRetriever = new ConfigurationRetrieverForTests();
+    abstractConfigurationRetriever = new ConfigurationRetrieverTestImplementation();
   }
 
   @Test
@@ -44,13 +44,13 @@ class AbstractConfigurationRetrieverTest {
   @Test
   void shouldRetrievePropertiesWhenSchemeIsRecognized() throws Exception {
 
-    final var uri = new URIBuilder().setScheme(ConfigurationRetrieverForTests.SCHEME)
+    final var uri = new URIBuilder().setScheme(ConfigurationRetrieverTestImplementation.SCHEME)
         .setPath("path")
         .build();
 
     final var properties = abstractConfigurationRetriever.retrieve(uri);
 
-    assertThat(properties).containsAllEntriesOf(ConfigurationRetrieverForTests.DEFAULT_PROPERTIES);
+    assertThat(properties).containsAllEntriesOf(ConfigurationRetrieverTestImplementation.DEFAULT_PROPERTIES);
   }
 
   @Test
@@ -66,11 +66,11 @@ class AbstractConfigurationRetrieverTest {
   @Test
   void shouldThrowIllegalArgumentExceptionWhenConfigurationLineIsInvalid() throws Exception {
 
-    final var uri = new URIBuilder().setScheme(ConfigurationRetrieverForTests.SCHEME)
+    final var uri = new URIBuilder().setScheme(ConfigurationRetrieverTestImplementation.SCHEME)
         .setPath("path")
         .build();
 
-    ((ConfigurationRetrieverForTests)abstractConfigurationRetriever).setContent("property1=value1=anotherAssertion");
+    ((ConfigurationRetrieverTestImplementation)abstractConfigurationRetriever).setContent("property1=value1=anotherAssertion");
 
     assertThrows(IllegalArgumentException.class, () -> abstractConfigurationRetriever.retrieve(uri));
   }

@@ -5,18 +5,16 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.stereotype.Component;
 
-import java.util.Optional;
-
 @Component
 public class JsonContentVerifier extends AbstractContentVerifier {
 
   @Override
-  protected Optional<ContentType> doVerify(String content) {
+  protected ContentType doVerify(String content) {
     try {
       new JSONObject(content);
-      return Optional.of(ContentType.JSON);
+      return ContentType.JSON;
     } catch (JSONException exception) {
-      return Optional.empty();
+      return ContentType.UNKNOWN;
     }
   }
 }

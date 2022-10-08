@@ -7,7 +7,6 @@ import java.net.URI;
 import java.util.Map;
 import java.util.Set;
 
-
 @Component
 public class HttpConfigurationRetriever extends AbstractConfigurationRetriever {
 

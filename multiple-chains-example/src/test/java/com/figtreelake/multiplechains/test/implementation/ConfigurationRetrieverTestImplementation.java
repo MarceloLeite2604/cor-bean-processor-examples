@@ -7,8 +7,7 @@ import java.net.URI;
 import java.util.Map;
 import java.util.Set;
 
-@SuppressWarnings("java:S2187")
-public class ConfigurationRetrieverForTests extends AbstractConfigurationRetriever {
+public class ConfigurationRetrieverTestImplementation extends AbstractConfigurationRetriever {
 
   public static final String SCHEME = "testScheme";
   public static final String DEFAULT_CONTENT = """
@@ -24,7 +23,7 @@ public class ConfigurationRetrieverForTests extends AbstractConfigurationRetriev
   @Setter
   private String content;
 
-  public ConfigurationRetrieverForTests() {
+  public ConfigurationRetrieverTestImplementation() {
     super(Set.of(SCHEME));
     this.content = DEFAULT_CONTENT;
   }

@@ -4,8 +4,6 @@ import com.figtreelake.multiplechains.service.contentverifier.ContentType;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
-import java.util.Optional;
-
 @RequiredArgsConstructor
 public abstract class AbstractContentVerifier implements ContentVerifier {
 
@@ -14,13 +12,14 @@ public abstract class AbstractContentVerifier implements ContentVerifier {
 
   @Override
   public ContentType verify(String content) {
-    return doVerify(content)
-        .orElseGet(() ->
-            Optional.ofNullable(next)
-                .map(n -> n.verify(content))
-                .orElse(ContentType.UNKNOWN)
-        );
+    final var contentType = doVerify(content);
+
+    if (ContentType.UNKNOWN.equals(contentType) && next != null) {
+      return next.verify(content);
+    }
+
+    return contentType;
   }
 
-  protected abstract Optional<ContentType> doVerify(String content);
+  protected abstract ContentType doVerify(String content);
 }

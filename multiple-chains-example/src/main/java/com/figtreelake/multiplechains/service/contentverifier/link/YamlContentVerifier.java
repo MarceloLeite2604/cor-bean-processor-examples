@@ -6,7 +6,6 @@ import org.springframework.stereotype.Component;
 import org.yaml.snakeyaml.Yaml;
 
 import java.io.StringReader;
-import java.util.Optional;
 
 @Component
 @Slf4j
@@ -19,7 +18,7 @@ public class YamlContentVerifier extends AbstractContentVerifier {
   }
 
   @Override
-  protected Optional<ContentType> doVerify(String content) {
+  protected ContentType doVerify(String content) {
     final var contentReader = new StringReader(content);
     final var events = yaml.parse(contentReader);
 
@@ -28,9 +27,9 @@ public class YamlContentVerifier extends AbstractContentVerifier {
           .hasNext()) {
         events.iterator().next();
       }
-      return Optional.of(ContentType.YAML);
+      return ContentType.YAML;
     } catch (Exception exception) {
-      return Optional.empty();
+      return ContentType.UNKNOWN;
     }
 
   }
