@@ -1,6 +1,7 @@
 package com.figtreelake.multiplechains.service.configuration.retriever;
 
-import com.figtreelake.corbeanprocessor.autoconfigure.ChainLink;
+
+import com.figtreelake.corbeanprocessor.autoconfigure.link.ChainLink;
 
 import java.net.URI;
 import java.util.Map;

@@ -1,6 +1,6 @@
 package com.figtreelake.corbeanprocessor.singlechainexample.link;
 
-import com.figtreelake.corbeanprocessor.autoconfigure.ChainLink;
+import com.figtreelake.corbeanprocessor.autoconfigure.link.ChainLink;
 import lombok.Setter;
 
 public abstract class AbstractExampleLink implements ChainLink<AbstractExampleLink>, ExampleLink {
