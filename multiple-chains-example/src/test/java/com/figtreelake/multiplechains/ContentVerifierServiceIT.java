@@ -13,7 +13,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @Tag("integrationTest")
 @SpringBootTest
-class MultipleChainsExampleIT {
+class ContentVerifierServiceIT {
 
   @Autowired
   private ConfigurationService configurationService;
@@ -25,10 +25,5 @@ class MultipleChainsExampleIT {
   void should() {
     assertThat(configurationService).isNotNull();
     assertThat(contentVerifierService).isNotNull();
-  }
-
-  @SpringBootConfiguration
-  @ComponentScan("com.figtreelake.multiplechains")
-  public static class ITConfig {
   }
 }

@@ -1,6 +1,7 @@
 package com.figtreelake.multiplechains.service.configuration.retriever;
 
 import com.figtreelake.multiplechains.test.fixture.PropertiesFixture;
+import com.figtreelake.multiplechains.test.fixture.UriFixture;
 import org.apache.logging.log4j.util.Strings;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -24,10 +25,7 @@ class FileConfigurationRetrieverTest {
 
     final var expectedProperties = PropertiesFixture.createFileProperties();
 
-    final var uri = Paths.get(Strings.EMPTY)
-        .toAbsolutePath()
-        .resolve("file-input/configuration.txt")
-        .toUri();
+    final var uri = UriFixture.createFileUri();
 
     final var properties = fileConfigurationRetriever.retrieve(uri);
 

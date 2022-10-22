@@ -2,9 +2,9 @@ package com.figtreelake.multiplechains.service.configuration.retriever;
 
 
 import com.figtreelake.multiplechains.test.fixture.PropertiesFixture;
+import com.figtreelake.multiplechains.test.fixture.UriFixture;
 import com.github.tomakehurst.wiremock.junit5.WireMockRuntimeInfo;
 import com.github.tomakehurst.wiremock.junit5.WireMockTest;
-import org.apache.hc.core5.net.URIBuilder;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -21,8 +21,6 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @WireMockTest
 class HttpConfigurationRetrieverTest {
-
-  private static final String CONFIGURATION_PATH = "/configuration";
 
   private HttpConfigurationRetriever httpConfigurationRetriever;
 
@@ -44,11 +42,9 @@ class HttpConfigurationRetrieverTest {
         .map(entry -> entry.getKey() + "=" + entry.getValue())
         .collect(Collectors.joining("\n"));
 
-    stubFor(get(CONFIGURATION_PATH).willReturn(ok().withBody(responseBody)));
+    stubFor(get(UriFixture.HTTP_CONFIGURATION_PATH).willReturn(ok().withBody(responseBody)));
 
-    final var uri = new URIBuilder(wireMockRuntimeInfo.getHttpBaseUrl())
-        .setPath(CONFIGURATION_PATH)
-        .build();
+    final var uri = UriFixture.createHttpUri(wireMockRuntimeInfo);
 
     final var properties = httpConfigurationRetriever.doRetrieve(uri);
 
@@ -61,11 +57,10 @@ class HttpConfigurationRetrieverTest {
       HttpStatus httpStatus,
       WireMockRuntimeInfo wireMockRuntimeInfo) throws Exception {
 
-    stubFor(get(CONFIGURATION_PATH).willReturn(status(httpStatus.value())));
+    stubFor(get(UriFixture.HTTP_CONFIGURATION_PATH)
+        .willReturn(status(httpStatus.value())));
 
-    final var uri = new URIBuilder(wireMockRuntimeInfo.getHttpBaseUrl())
-        .setPath(CONFIGURATION_PATH)
-        .build();
+    final var uri = UriFixture.createHttpUri(wireMockRuntimeInfo);
 
     assertThrows(IllegalStateException.class,
         () -> httpConfigurationRetriever.doRetrieve(uri));

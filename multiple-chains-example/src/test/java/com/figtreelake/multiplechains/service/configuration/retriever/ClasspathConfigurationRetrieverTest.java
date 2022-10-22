@@ -1,6 +1,7 @@
 package com.figtreelake.multiplechains.service.configuration.retriever;
 
 import com.figtreelake.multiplechains.test.fixture.PropertiesFixture;
+import com.figtreelake.multiplechains.test.fixture.UriFixture;
 import org.apache.hc.core5.net.URIBuilder;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -22,9 +23,7 @@ class ClasspathConfigurationRetrieverTest {
 
     final var expectedProperties = PropertiesFixture.createClasspathProperties();
 
-    final var uri = new URIBuilder().setScheme("classpath")
-        .setPath("/classpath-input/configuration.txt")
-        .build();
+    final var uri = UriFixture.createClasspathUri();
 
     final var properties = classpathConfigurationRetriever.retrieve(uri);
 
