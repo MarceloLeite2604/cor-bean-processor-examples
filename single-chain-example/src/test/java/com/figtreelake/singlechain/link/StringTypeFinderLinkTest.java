@@ -1,17 +1,17 @@
-package com.figtreelake.corbeanprocessor.singlechainexample.link;
+package com.figtreelake.singlechain.link;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-class StringExampleLinkTest {
+class StringTypeFinderLinkTest {
 
-  private StringExampleLink stringExampleLink;
+  private StringTypeFinderLink stringExampleLink;
 
   @BeforeEach
   void setUp() {
-    stringExampleLink = new StringExampleLink();
+    stringExampleLink = new StringTypeFinderLink();
   }
 
   @Test

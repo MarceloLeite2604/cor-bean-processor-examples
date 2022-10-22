@@ -1,9 +1,12 @@
-package com.figtreelake.corbeanprocessor.singlechainexample.link;
+package com.figtreelake.singlechain.link;
 
 import org.springframework.stereotype.Component;
 
 @Component
-public class NullExampleLink extends AbstractExampleLink {
+public class NullTypeFinderLink extends AbstractTypeFinderLink {
+
+  public static final String TYPE_MESSAGE = "Object is null.";
+
   @Override
   protected boolean applies(Object object) {
     return object == null;
@@ -11,6 +14,6 @@ public class NullExampleLink extends AbstractExampleLink {
 
   @Override
   protected String doFindType(Object object) {
-    return "Object is null.";
+    return TYPE_MESSAGE;
   }
 }

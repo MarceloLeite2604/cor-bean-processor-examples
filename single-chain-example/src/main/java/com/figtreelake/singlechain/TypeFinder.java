@@ -1,6 +1,6 @@
-package com.figtreelake.corbeanprocessor.singlechainexample;
+package com.figtreelake.singlechain;
 
-import com.figtreelake.corbeanprocessor.singlechainexample.link.ExampleLink;
+import com.figtreelake.singlechain.link.TypeFinderLink;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class TypeFinder {
 
-    private final ExampleLink first;
+    private final TypeFinderLink first;
 
     public String findType(Object object) {
         return first.findType(object);

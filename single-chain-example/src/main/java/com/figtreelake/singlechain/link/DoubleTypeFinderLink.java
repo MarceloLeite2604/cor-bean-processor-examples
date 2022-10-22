@@ -1,9 +1,12 @@
-package com.figtreelake.corbeanprocessor.singlechainexample.link;
+package com.figtreelake.singlechain.link;
 
 import org.springframework.stereotype.Component;
 
 @Component
-public class DoubleExampleLink extends AbstractExampleLink {
+public class DoubleTypeFinderLink extends AbstractTypeFinderLink {
+
+  public static final String TYPE_MESSAGE = "Object is a double.";
+
   @Override
   protected boolean applies(Object object) {
     return object instanceof Double;
@@ -11,6 +14,6 @@ public class DoubleExampleLink extends AbstractExampleLink {
 
   @Override
   protected String doFindType(Object object) {
-    return "Object is a double.";
+    return TYPE_MESSAGE;
   }
 }

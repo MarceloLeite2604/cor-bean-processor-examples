@@ -1,9 +1,12 @@
-package com.figtreelake.corbeanprocessor.singlechainexample.link;
+package com.figtreelake.singlechain.link;
 
 import org.springframework.stereotype.Component;
 
 @Component
-public class IntegerExampleLink extends AbstractExampleLink {
+public class IntegerTypeFinderLink extends AbstractTypeFinderLink {
+
+  public static final String TYPE_MESSAGE = "Object is an integer.";
+
   @Override
   protected boolean applies(Object object) {
     return object instanceof Integer;
@@ -11,6 +14,6 @@ public class IntegerExampleLink extends AbstractExampleLink {
 
   @Override
   protected String doFindType(Object object) {
-    return "Object is an integer.";
+    return TYPE_MESSAGE;
   }
 }
