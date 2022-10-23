@@ -9,7 +9,6 @@ public class MultipleChainsConfiguration {
 
   @Bean
   public WebClient createWebClient() {
-    System.out.println("Creating webclient");
     return WebClient.create();
   }
 }
