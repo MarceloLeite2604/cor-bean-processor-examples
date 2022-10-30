@@ -22,11 +22,13 @@
   <properties>
     <java.version>17</java.version>
     <corBeanProcessorStarter.version>0.0.2-SNAPSHOT</corBeanProcessorStarter.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
   <modules>
     <module>single-chain-example</module>
     <module>multiple-chains-example</module>
+    <module>chain-with-primary-link-example</module>
   </modules>
 
   <dependencyManagement>
