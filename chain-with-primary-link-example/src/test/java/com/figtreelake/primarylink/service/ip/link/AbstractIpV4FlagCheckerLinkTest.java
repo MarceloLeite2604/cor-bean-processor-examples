@@ -1,6 +1,7 @@
 package com.figtreelake.primarylink.service.ip.link;
 
 import com.figtreelake.primarylink.IpV4Flags;
+import com.figtreelake.primarylink.test.fixture.IpV4FlagsFixture;
 import com.figtreelake.primarylink.test.implementation.AbstractIpV4FlagCheckerLinkImplementation;
 import org.junit.jupiter.api.Test;
 
@@ -70,22 +71,14 @@ class AbstractIpV4FlagCheckerLinkTest {
   void shouldReturnIpV4FlagsFromNextObjectWhenDoCheckReturnsNonEmptyAndNextFieldIsNotNull() {
     final var input = new byte[]{0x00};
 
-    final var doCheckIpV4FlagsResponse = IpV4Flags.builder()
-        .doNotFragment(true)
-        .moreFragments(false)
-        .evilBit(true)
-        .build();
+    final var doCheckIpV4FlagsResponse = IpV4FlagsFixture.create();
 
     final var doCheckContextResponse = Context.builder()
         .data(input)
         .ipV4Flags(doCheckIpV4FlagsResponse)
         .build();
 
-    final var nextCheckIpV4FlagsResponse = IpV4Flags.builder()
-        .doNotFragment(true)
-        .moreFragments(false)
-        .evilBit(true)
-        .build();
+    final var nextCheckIpV4FlagsResponse = IpV4FlagsFixture.create();
 
     final var nextCheckContextResponse = Context.builder()
         .data(input)

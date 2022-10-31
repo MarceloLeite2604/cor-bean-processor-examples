@@ -1,4 +1,4 @@
-package com.figtreelake.multiplechains;
+package com.figtreelake.multiplechains.service.configuration;
 
 import com.figtreelake.multiplechains.service.configuration.ConfigurationService;
 import com.figtreelake.multiplechains.test.AbstractIT;

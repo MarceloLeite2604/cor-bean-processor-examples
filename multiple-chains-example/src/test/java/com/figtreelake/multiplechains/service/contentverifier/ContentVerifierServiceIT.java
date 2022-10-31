@@ -1,4 +1,4 @@
-package com.figtreelake.multiplechains;
+package com.figtreelake.multiplechains.service.contentverifier;
 
 import com.figtreelake.multiplechains.service.contentverifier.ContentType;
 import com.figtreelake.multiplechains.service.contentverifier.ContentVerifierService;
