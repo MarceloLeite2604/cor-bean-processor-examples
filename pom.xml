@@ -29,6 +29,7 @@
     <module>single-chain-example</module>
     <module>multiple-chains-example</module>
     <module>chain-with-primary-link-example</module>
+    <module>chain-with-ordered-links-example</module>
   </modules>
 
   <dependencyManagement>
