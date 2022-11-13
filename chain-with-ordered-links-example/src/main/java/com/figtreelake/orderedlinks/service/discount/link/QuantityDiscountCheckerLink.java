@@ -3,6 +3,7 @@ package com.figtreelake.orderedlinks.service.discount.link;
 import com.figtreelake.orderedlinks.domain.Order;
 import com.figtreelake.orderedlinks.domain.discount.DiscountAmountValue;
 import com.figtreelake.orderedlinks.domain.discount.QuantityDiscount;
+import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
 
 import java.math.BigDecimal;
@@ -11,6 +12,7 @@ import java.util.ArrayList;
 import java.util.Optional;
 
 @org.springframework.core.annotation.Order(20)
+@Component
 public class QuantityDiscountCheckerLink extends AbstractDiscountCheckerLink {
 
   @Override

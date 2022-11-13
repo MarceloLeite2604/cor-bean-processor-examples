@@ -4,6 +4,7 @@ import com.figtreelake.orderedlinks.domain.Order;
 import com.figtreelake.orderedlinks.domain.discount.CustomerTypeDiscount;
 import com.figtreelake.orderedlinks.domain.discount.DiscountAmountValue;
 import com.figtreelake.orderedlinks.domain.item.Item;
+import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -12,6 +13,7 @@ import java.util.Map;
 import java.util.Optional;
 
 @org.springframework.core.annotation.Order(30)
+@Component
 public class CustomerTypeDiscountCheckerLink extends AbstractDiscountCheckerLink {
 
   @Override

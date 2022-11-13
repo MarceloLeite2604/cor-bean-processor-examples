@@ -20,7 +20,7 @@ class CustomerTypeDiscountCheckerLinkTest {
 
   @Test
   void shouldReturnCustomerDiscountOnOrder() {
-    final var input = OrderFixture.create(CustomerType.FREQUENT);
+    final var input = OrderFixture.createForCustomerTypeDiscounts();
     final var expected = OrderFixture.createWithCustomerTypeDiscounts();
 
     final var actual = customerTypeDiscountCheckerLink.check(input);
@@ -32,7 +32,7 @@ class CustomerTypeDiscountCheckerLinkTest {
 
   @Test
   void shouldReturnOrderWithoutDiscountsWhenNoQuantityDiscountMatches() {
-    final var input = OrderFixture.create(CustomerType.USUAL);
+    final var input = OrderFixture.createForBundledDiscounts(CustomerType.USUAL);
 
     final var expected = input.toBuilder()
         .discountAmountValues(Collections.emptyList())

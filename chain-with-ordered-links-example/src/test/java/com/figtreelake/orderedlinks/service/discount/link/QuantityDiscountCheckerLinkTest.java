@@ -19,7 +19,7 @@ class QuantityDiscountCheckerLinkTest {
 
   @Test
   void shouldReturnQuantityDiscountsOnOrder() {
-    final var input = OrderFixture.create();
+    final var input = OrderFixture.createForQuantityDiscounts();
     final var expected = OrderFixture.createWithQuantityDiscounts();
 
     final var actual = quantityDiscountCheckerLink.check(input);

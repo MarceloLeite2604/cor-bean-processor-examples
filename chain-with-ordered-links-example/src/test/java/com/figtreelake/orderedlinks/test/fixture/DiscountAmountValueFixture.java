@@ -34,14 +34,9 @@ public class DiscountAmountValueFixture {
             .quantity(3)
             .build(),
         DiscountAmountValue.builder()
-            .discount(QuantityDiscount.REFRESHING_DOZEN)
-            .value(BigDecimal.valueOf(0.59))
-            .quantity(2)
-            .build(),
-        DiscountAmountValue.builder()
             .discount(QuantityDiscount.THREE_PLUS_ONE_SANDWICHES)
             .value(BigDecimal.valueOf(2.39))
-            .quantity(1)
+            .quantity(3)
             .build());
   }
 
@@ -49,7 +44,7 @@ public class DiscountAmountValueFixture {
     return List.of(
         DiscountAmountValue.builder()
             .discount(CustomerTypeDiscount.WELCOME_BACK)
-            .value(BigDecimal.valueOf(0.96))
+            .value(BigDecimal.valueOf(0.09))
             .quantity(1)
             .build());
   }

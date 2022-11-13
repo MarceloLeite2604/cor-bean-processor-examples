@@ -19,7 +19,7 @@ class BundleDiscountCheckerLinkTest {
 
   @Test
   void shouldReturnBundleDiscountsOnOrder() {
-    final var input = OrderFixture.create();
+    final var input = OrderFixture.createForBundledDiscounts();
     final var expected = OrderFixture.createWithBundleDiscounts();
 
     final var actual = bundleDiscountCheckerLink.check(input);

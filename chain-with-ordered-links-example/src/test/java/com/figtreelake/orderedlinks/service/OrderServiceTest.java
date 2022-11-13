@@ -22,7 +22,7 @@ class OrderServiceTest {
 
   @Test
   void shouldUpdateOrderWithTotalAndDiscountsAndTotalWithDiscounts() {
-    final var input = OrderFixture.create();
+    final var input = OrderFixture.createForBundledDiscounts();
     final var expected = OrderFixture.createWithBundleDiscountsAndTotal();
 
     when(discountService.calculateDiscounts(input)).thenReturn(OrderFixture.createWithBundleDiscounts());

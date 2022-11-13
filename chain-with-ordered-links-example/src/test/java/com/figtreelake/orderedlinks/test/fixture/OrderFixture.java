@@ -14,15 +14,25 @@ import java.util.Map;
 @UtilityClass
 public class OrderFixture {
 
-  public static final Map<Item, Integer> ITEM_AMOUNTS = Map.ofEntries(
+  public static final Map<Item, Integer> ITEM_AMOUNTS_FOR_BUNDLE_DISCOUNTS = Map.ofEntries(
       Map.entry(Item.JUICE_BOX, 24),
       Map.entry(Item.SANDWICH, 4),
       Map.entry(Item.CHOCOLATE_BAR, 9)
   );
 
+  public static final Map<Item, Integer> ITEM_AMOUNTS_FOR_QUANTITY_DISCOUNTS = Map.ofEntries(
+      Map.entry(Item.SANDWICH, 13),
+      Map.entry(Item.CHOCOLATE_BAR, 10)
+  );
+
+  public static final Map<Item, Integer> ITEM_AMOUNTS_FOR_NO_DISCOUNTS = Map.ofEntries(
+      Map.entry(Item.SANDWICH, 1),
+      Map.entry(Item.JUICE_BOX, 1)
+  );
+
   public static final CustomerType CUSTOMER_TYPE = CustomerType.USUAL;
 
-  private static Order create(
+  private static Order createForBundledDiscounts(
       CustomerType customerType,
       Map<Item, Integer> itemAmounts,
       List<DiscountAmountValue> discountAmountValues,
@@ -37,44 +47,53 @@ public class OrderFixture {
         .build();
   }
 
-  public static Order create() {
-    return create(
+  public static Order createForBundledDiscounts() {
+    return createForBundledDiscounts(
         CUSTOMER_TYPE,
-        ITEM_AMOUNTS,
+        ITEM_AMOUNTS_FOR_BUNDLE_DISCOUNTS,
+        Collections.emptyList(),
+        BigDecimal.ZERO,
+        BigDecimal.ZERO);
+  }
+
+  public static Order createForQuantityDiscounts() {
+    return createForBundledDiscounts(
+        CUSTOMER_TYPE,
+        ITEM_AMOUNTS_FOR_QUANTITY_DISCOUNTS,
         Collections.emptyList(),
         BigDecimal.ZERO,
         BigDecimal.ZERO);
   }
 
   public static Order createWithBundleDiscounts() {
-    return create(
+    return createForBundledDiscounts(
         CUSTOMER_TYPE,
-        ITEM_AMOUNTS,
+        ITEM_AMOUNTS_FOR_BUNDLE_DISCOUNTS,
         DiscountAmountValueFixture.createBundleDiscounts(),
         BigDecimal.ZERO,
         BigDecimal.ZERO);
   }
 
   public static Order createWithQuantityDiscounts() {
-    return create(
+    return createForBundledDiscounts(
         CUSTOMER_TYPE,
-        ITEM_AMOUNTS,
+        ITEM_AMOUNTS_FOR_QUANTITY_DISCOUNTS,
         DiscountAmountValueFixture.createQuantityDiscounts(),
         BigDecimal.ZERO,
         BigDecimal.ZERO);
   }
 
   public static Order createWithBundleDiscountsAndTotal() {
-    return create(
+    return createForBundledDiscounts(
         CUSTOMER_TYPE,
-        ITEM_AMOUNTS,
+        ITEM_AMOUNTS_FOR_BUNDLE_DISCOUNTS,
         DiscountAmountValueFixture.createBundleDiscounts(),
         BigDecimal.valueOf(32.03),
         BigDecimal.valueOf(28.85));
   }
 
   public static Order createWithNoMatchingDiscountItems() {
-    return create(
+    return createForBundledDiscounts(
         CUSTOMER_TYPE,
         Map.of(Item.CHOCOLATE_BAR, 1),
         Collections.emptyList(),
@@ -82,19 +101,28 @@ public class OrderFixture {
         BigDecimal.ZERO);
   }
 
-  public static Order create(CustomerType customerType) {
-    return create(
+  public static Order createForBundledDiscounts(CustomerType customerType) {
+    return createForBundledDiscounts(
         customerType,
-        ITEM_AMOUNTS,
+        ITEM_AMOUNTS_FOR_BUNDLE_DISCOUNTS,
+        Collections.emptyList(),
+        BigDecimal.ZERO,
+        BigDecimal.ZERO);
+  }
+
+  public static Order createForCustomerTypeDiscounts() {
+    return createForBundledDiscounts(
+        CustomerType.FREQUENT,
+        ITEM_AMOUNTS_FOR_NO_DISCOUNTS,
         Collections.emptyList(),
         BigDecimal.ZERO,
         BigDecimal.ZERO);
   }
 
   public static Order createWithCustomerTypeDiscounts() {
-    return create(
+    return createForBundledDiscounts(
         CustomerType.FREQUENT,
-        ITEM_AMOUNTS,
+        ITEM_AMOUNTS_FOR_NO_DISCOUNTS,
         DiscountAmountValueFixture.createCustomerTypeDiscounts(),
         BigDecimal.ZERO,
         BigDecimal.ZERO);

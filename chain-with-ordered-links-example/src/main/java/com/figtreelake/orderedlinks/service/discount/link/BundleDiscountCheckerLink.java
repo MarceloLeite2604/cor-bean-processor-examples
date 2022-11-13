@@ -5,6 +5,7 @@ import com.figtreelake.orderedlinks.domain.discount.BundleDiscount;
 import com.figtreelake.orderedlinks.domain.discount.DiscountAmountValue;
 import com.figtreelake.orderedlinks.domain.item.Item;
 import com.figtreelake.orderedlinks.domain.item.ItemAmount;
+import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
 
 import java.math.BigDecimal;
@@ -15,6 +16,7 @@ import java.util.Map;
 import java.util.Optional;
 
 @org.springframework.core.annotation.Order(10)
+@Component
 public class BundleDiscountCheckerLink extends AbstractDiscountCheckerLink {
 
   @Override

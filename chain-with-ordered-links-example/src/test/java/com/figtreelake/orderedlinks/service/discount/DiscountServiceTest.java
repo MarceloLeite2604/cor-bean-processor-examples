@@ -22,7 +22,7 @@ class DiscountServiceTest {
 
   @Test
   void shouldInvokeFirstDiscountCheckerLinkCheckMethod() {
-    final var input = OrderFixture.create();
+    final var input = OrderFixture.createForBundledDiscounts();
     discountService.calculateDiscounts(input);
 
     verify(firstDiscountCheckerLink, times(1)).check(input);
