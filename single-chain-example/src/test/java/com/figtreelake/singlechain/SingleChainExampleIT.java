@@ -16,7 +16,7 @@ import java.io.ByteArrayOutputStream;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-@Tag("integrationTest")
+@Tag("integration-test")
 @SpringBootTest
 class SingleChainExampleIT {
 

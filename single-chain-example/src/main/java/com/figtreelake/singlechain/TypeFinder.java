@@ -8,9 +8,9 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class TypeFinder {
 
-    private final TypeFinderLink first;
+    private final TypeFinderLink firstLink;
 
     public String findType(Object object) {
-        return first.findType(object);
+        return firstLink.findType(object);
     }
 }

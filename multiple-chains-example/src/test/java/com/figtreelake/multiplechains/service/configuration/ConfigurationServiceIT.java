@@ -1,11 +1,11 @@
 package com.figtreelake.multiplechains.service.configuration;
 
-import com.figtreelake.multiplechains.service.configuration.ConfigurationService;
 import com.figtreelake.multiplechains.test.AbstractIT;
 import com.figtreelake.multiplechains.test.fixture.PropertiesFixture;
 import com.figtreelake.multiplechains.test.fixture.UriFixture;
 import com.github.tomakehurst.wiremock.junit5.WireMockRuntimeInfo;
 import com.github.tomakehurst.wiremock.junit5.WireMockTest;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -14,6 +14,7 @@ import java.util.stream.Collectors;
 import static com.github.tomakehurst.wiremock.client.WireMock.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
+@Tag("integration-test")
 @WireMockTest
 class ConfigurationServiceIT extends AbstractIT {
 
@@ -39,7 +40,7 @@ class ConfigurationServiceIT extends AbstractIT {
   }
 
   @Test
-  void shouldRetrieveConfigurationFromHttpRequest(WireMockRuntimeInfo wireMockRuntimeInfo) throws Exception{
+  void shouldRetrieveConfigurationFromHttpRequest(WireMockRuntimeInfo wireMockRuntimeInfo) throws Exception {
     final var uri = UriFixture.createHttpUri(wireMockRuntimeInfo);
     final var expectedProperties = PropertiesFixture.createHttpProperties();
 

@@ -1,6 +1,8 @@
 package com.figtreelake.singlechain.link;
 
-public interface TypeFinderLink {
+import com.figtreelake.corbeanprocessor.autoconfigure.link.ChainLink;
+
+public interface TypeFinderLink extends ChainLink<TypeFinderLink> {
 
     String findType(Object object);
 }

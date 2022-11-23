@@ -10,7 +10,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@Tag("integrationTest")
+@Tag("integration-test")
 @SpringBootTest
 class DiscountServiceIT {
 

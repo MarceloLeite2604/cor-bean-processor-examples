@@ -1,12 +1,11 @@
 package com.figtreelake.singlechain.link;
 
-import com.figtreelake.corbeanprocessor.autoconfigure.link.ChainLink;
 import lombok.Setter;
 
-public abstract class AbstractTypeFinderLink implements ChainLink<AbstractTypeFinderLink>, TypeFinderLink {
+public abstract class AbstractTypeFinderLink implements TypeFinderLink {
 
     @Setter
-    private AbstractTypeFinderLink next;
+    private TypeFinderLink next;
 
     @Override
     public String findType(Object object) {
