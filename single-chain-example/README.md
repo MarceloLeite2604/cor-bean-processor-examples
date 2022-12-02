@@ -15,7 +15,7 @@ public interface TypeFinderLink extends ChainLink<TypeFinderLink> {
 ```
 
 [`AbstractTypeFinderLink`][2], as the name says, is an abstract class that implements [`TypeFinderLink`][1] interface.
-It implements `findType` demanded by [`TypeFinderLink`][1] and `setNext` demanded by [`ChainLink`][3]. The latter is implemented using [Lombok `@Setter` annotation](https://projectlombok.org/features/GetterSetter).
+It also implements `findType` demanded by [`TypeFinderLink`][1] and `setNext` demanded by [`ChainLink`][3]. The latter is implemented using [Lombok `@Setter` annotation](https://projectlombok.org/features/GetterSetter).
 
 ```java
 public abstract class AbstractTypeFinderLink implements TypeFinderLink {

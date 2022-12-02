@@ -8,9 +8,9 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class ContentVerifierService {
 
-  private final ContentVerifier contentVerifier;
+  private final ContentVerifier firstLink;
 
   public ContentType verify(String content) {
-    return contentVerifier.verify(content);
+    return firstLink.verify(content);
   }
 }

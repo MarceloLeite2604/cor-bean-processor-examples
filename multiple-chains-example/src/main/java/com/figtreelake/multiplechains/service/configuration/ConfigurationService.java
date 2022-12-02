@@ -11,9 +11,9 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class ConfigurationService {
 
-  private final ConfigurationRetriever configurationRetriever;
+  private final ConfigurationRetriever firstLink;
 
   public Map<String, String> retrieve(URI uri) {
-    return configurationRetriever.retrieve(uri);
+    return firstLink.retrieve(uri);
   }
 }

@@ -5,6 +5,6 @@ This repository contains examples presenting how to use and make the most with [
 # Summary
 
 - [Single Chain example](./single-chain-example)
-- Multiple Chains example
+- [Multiple Chains example](./multiple-chains-example)
 - Chain With Primary Link example
 - Chain With Ordered Links example
