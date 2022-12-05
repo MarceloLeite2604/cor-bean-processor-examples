@@ -19,7 +19,7 @@ class IpServiceIT {
 
   @Test
   void shouldContainIpV4VersionCheckerAsFirstLink() {
-    assertThat(ipService.getFirstIpV4FlagCheckerLink())
+    assertThat(ipService.getFirstLink())
         .isInstanceOf(IpV4VersionCheckLink.class);
   }
 

@@ -14,9 +14,9 @@ import java.util.Optional;
 public class IpService {
 
   @Getter(AccessLevel.PACKAGE)
-  private final IpV4FlagCheckerLink firstIpV4FlagCheckerLink;
+  private final IpV4FlagCheckerLink firstLink;
 
   public Optional<IpV4Flags> retrieveIpV4Flags(byte[] data) {
-    return firstIpV4FlagCheckerLink.check(data);
+    return firstLink.check(data);
   }
 }
