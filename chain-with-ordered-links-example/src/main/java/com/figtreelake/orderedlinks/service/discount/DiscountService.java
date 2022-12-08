@@ -9,9 +9,9 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class DiscountService {
 
-  private final DiscountCheckerLink firstDiscountCheckerLink;
+  private final DiscountCheckerLink firstLink;
 
   public Order calculateDiscounts(Order order) {
-    return firstDiscountCheckerLink.check(order);
+    return firstLink.check(order);
   }
 }

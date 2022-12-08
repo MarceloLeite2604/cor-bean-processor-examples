@@ -7,4 +7,4 @@ This repository contains examples presenting how to use and make the most with [
 - [Single Chain example](./single-chain-example)
 - [Multiple Chains example](./multiple-chains-example)
 - [Chain With Primary Link example](./chain-with-primary-link-example)
-- Chain With Ordered Links example
+- [Chain With Ordered Links example](./chain-with-ordered-links-example)
