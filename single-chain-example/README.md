@@ -49,7 +49,7 @@ The complete integration with Spring Boot can be checked on [`SingleChainExample
 Alternatively, the test can also be executed through a terminal using the following command.
 
 ```bash
-mvn failsafe:integration-test
+mvn test-compile failsafe:integration-test
 ```
 
 [1]: ./src/main/java/com/figtreelake/singlechain/link/TypeFinderLink.java

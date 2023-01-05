@@ -95,7 +95,7 @@ The complete integration with Spring Boot can be checked on [`ContentVerifierSer
 Alternatively, the tests can also be executed through a terminal running the following command on this module root directory.
 
 ```bash
-mvn failsafe:integration-test
+mvn test-compile failsafe:integration-test
 ```
 
 [abstract-configuration-retriever]: ./src/main/java/com/figtreelake/multiplechains/service/configuration/retriever/AbstractConfigurationRetriever.java

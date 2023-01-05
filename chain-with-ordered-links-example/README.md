@@ -125,7 +125,7 @@ The complete integration with Spring Boot can be checked on [`DiscountServiceIT`
 Alternatively, the tests can also be executed through a terminal running the following command on this module root directory.
 
 ```bash
-mvn failsafe:integration-test
+mvn test-compile failsafe:integration-test
 ```
 
 [abstract-discount-checker-link]: ./src/main/java/com/figtreelake/orderedlinks/service/discount/link/AbstractDiscountCheckerLink.java
